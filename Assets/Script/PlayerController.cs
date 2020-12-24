@@ -40,9 +40,9 @@ public class PlayerController : MonoBehaviour
             stop = true;
         }
         //sutamina上限
-        if(sutamina > 20)
+        if(sutamina > 10)
         {
-            sutamina = 20;
+            sutamina = 10;
         }
     }
     private void FixedUpdate()
@@ -82,6 +82,16 @@ public class PlayerController : MonoBehaviour
                     stop = false;
                 }
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("water"))
+        {
+            sutamina += 3;
+            Debug.Log("hit");
+            Destroy(collision.gameObject);
         }
     }
 }
