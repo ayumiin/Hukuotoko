@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 350f;
     public float sutamina = 20f;
     public Slider StSlider;
-    public bool stop,speedup,sutaminaup;
+    public Text scoretext;
 
     private Rigidbody2D rigidbody;
     private Vector2 vector;
@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private float timer = 0;
     private float speedtimer, sutaminatimer;
     private float nowsutamina;
+    private int score = 0;
+    private bool stop,speedup,sutaminaup;
 
     // Start is called before the first frame update
     void Start()
@@ -127,6 +129,12 @@ public class PlayerController : MonoBehaviour
         {
             sutaminaup = true;
             nowsutamina = sutamina;
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.CompareTag("score"))
+        {
+            score++;
+            scoretext.text = "score:" + score.ToString();
             Destroy(collision.gameObject);
         }
     }
