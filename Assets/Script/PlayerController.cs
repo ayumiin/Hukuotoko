@@ -12,13 +12,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody;
     private Vector2 vector;
-    private GameObject script;
+    private GameObject script,hit;
     private GameController game;
+    private goalScript GoalScript;
     private float timer = 0;
     private float speedtimer, sutaminatimer;
     private float nowsutamina;
     private int score = 0;
     private bool stop,speedup,sutaminaup;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
         script = GameObject.Find("GameController");
         game = script.GetComponent<GameController>();
+
+        hit = GameObject.Find("hit");
+        GoalScript = hit.GetComponent<goalScript>();
     }
 
     // Update is called once per frame
@@ -113,31 +118,54 @@ public class PlayerController : MonoBehaviour
                 sutaminatimer = 0;
             }
         }
+        switch (GoalScript.count)
+        {
+            case 1:
+                Debug.Log("一位");
+                break;
+            case 2:
+                Debug.Log("二位");
+                break;
+            case 3:
+                Debug.Log("3位");
+                break;
+            case 4:
+                Debug.Log("4位");
+                break;
+
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("water"))
+        if (collision.gameObject.CompareTag("water"))
         {
             sutamina += 3;
             Destroy(collision.gameObject);
         }
-        if (collision.collider.CompareTag("Energy"))
+        if (collision.gameObject.CompareTag("Energy"))
         {
             speedup = true;
             Destroy(collision.gameObject);
         }
-        if (collision.collider.CompareTag("sutaminaup"))
+        if (collision.gameObject.CompareTag("sutaminaup"))
         {
             sutaminaup = true;
             nowsutamina = sutamina;
             Destroy(collision.gameObject);
         }
-        if (collision.collider.CompareTag("score"))
+        if (collision.gameObject.CompareTag("score"))
         {
             score++;
             scoretext.text = "score:" + score.ToString();
             Destroy(collision.gameObject);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("goal"))
+        {
+            rigidbody.velocity = Vector3.zero;
         }
     }
 }

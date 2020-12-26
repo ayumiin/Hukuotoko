@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 243658672}
   m_Layer: 0
   m_Name: enemy 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1826,9 +1826,10 @@ GameObject:
   m_Component:
   - component: {fileID: 364782311}
   - component: {fileID: 364782312}
+  - component: {fileID: 364782313}
   m_Layer: 0
-  m_Name: point (4)
-  m_TagString: Untagged
+  m_Name: hit
+  m_TagString: goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1841,11 +1842,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364782310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.454918, y: 47.363297, z: 914.3047}
+  m_LocalPosition: {x: -107.4, y: 293.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2124148696}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &364782312
 BoxCollider2D:
@@ -1857,10 +1858,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2748947, y: 5.5268555}
+  m_Offset: {x: 0.00039672852, y: -0.1109314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1871,8 +1872,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.052948, y: 4.993225}
+  m_Size: {x: 13.07132, y: 8.160522}
   m_EdgeRadius: 0
+--- !u!114 &364782313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364782310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9cd6018cd394dce9aa6f830c236f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
 --- !u!1 &449673278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,7 +2324,7 @@ GameObject:
   - component: {fileID: 581422012}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4129,7 +4143,7 @@ GameObject:
   - component: {fileID: 1394090879}
   m_Layer: 0
   m_Name: enemy 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4341,7 +4355,7 @@ GameObject:
   - component: {fileID: 1463916671}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4455,7 +4469,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5380,7 +5394,7 @@ GameObject:
   - component: {fileID: 1841066609}
   m_Layer: 0
   m_Name: enemy 4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6688,7 +6702,6 @@ Transform:
   - {fileID: 1401122234}
   - {fileID: 1328830865}
   - {fileID: 489587368}
-  - {fileID: 364782311}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
