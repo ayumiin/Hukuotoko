@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float speed = 350f;
-    public float sutamina = 20f;
+    private float speed = 8f;
+    private float sutamina = 500f;
     public Slider StSlider;
     public Text scoretext;
 
@@ -43,11 +43,13 @@ public class PlayerController : MonoBehaviour
         {
             stop = true;
         }
+        /*
         //sutamina上限
         if(sutamina > 10)
         {
             sutamina = 10;
         }
+        */
     }
     private void FixedUpdate()
     {
@@ -91,11 +93,11 @@ public class PlayerController : MonoBehaviour
         if (speedup == true)
         {
             speedtimer += Time.deltaTime;
-            speed += 50;
+            speed += 10;
             if(speedtimer > 3)
             {
                 speedup = false;
-                speed = 350;
+                speed = 10;
                 speedtimer = 0;
             }
         }
