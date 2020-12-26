@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float speed = 100f;
+    [SerializeField] float speed = 350f;
     public float sutamina = 20f;
     public Slider StSlider;
-    public bool stop;
+    public bool stop,speedup,sutaminaup;
 
     private Rigidbody2D rigidbody;
     private Vector2 vector;
     private GameObject script;
     private GameController game;
     private float timer = 0;
+    private float speedtimer, sutaminatimer;
+    private float nowsutamina;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +85,30 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        //energy取得、スピードアップ
+        if (speedup == true)
+        {
+            speedtimer += Time.deltaTime;
+            speed += 50;
+            if(speedtimer > 3)
+            {
+                speedup = false;
+                speed = 350;
+                speedtimer = 0;
+            }
+        }
+        //スタミナは減らない
+        if(sutaminaup == true)
+        {
+            sutaminatimer += Time.deltaTime;
+            sutamina = nowsutamina;
+            if(sutaminatimer > 3)
+            {
+                sutaminaup = false;
+                sutamina -= Time.deltaTime * 2;
+                sutaminatimer = 0;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -90,7 +116,17 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("water"))
         {
             sutamina += 3;
-            Debug.Log("hit");
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.CompareTag("Energy"))
+        {
+            speedup = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.CompareTag("sutaminaup"))
+        {
+            sutaminaup = true;
+            nowsutamina = sutamina;
             Destroy(collision.gameObject);
         }
     }
