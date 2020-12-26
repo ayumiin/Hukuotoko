@@ -1149,7 +1149,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463895203
 GameObject:
@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 1463895204}
   m_Layer: 0
   m_Name: points
-  m_TagString: Points
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1179,7 +1179,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463916666
 GameObject:
@@ -1216,10 +1216,7 @@ MonoBehaviour:
   speed: 300
   sutamina: 10
   StSlider: {fileID: 1061417003}
-  stop: 0
-  speedup: 0
-  sutaminaup: 0
-  scoretext: {fileID: 0}
+  scoretext: {fileID: 449673280}
 --- !u!212 &1463916668
 SpriteRenderer:
   m_ObjectHideFlags: 0
