@@ -71,4 +71,9 @@ public class EnemyController1 : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        enemySpeed = 0;
+    }
+
 }
