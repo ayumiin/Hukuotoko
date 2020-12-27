@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         script = GameObject.Find("GameController");
         game = script.GetComponent<GameController>();
 
-        hit = GameObject.Find("hit");
+        hit = GameObject.Find("goal");
         GoalScript = hit.GetComponent<goalScript>();
     }
 
@@ -135,8 +135,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("water"))
         {
@@ -161,6 +160,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("goal"))

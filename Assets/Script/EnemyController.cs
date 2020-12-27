@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 5.5f;
+    private float enemySpeed = 50f;
     //private NavMeshAgent agent;
     private Rigidbody2D rigidbody;
     private Vector2 vector;
@@ -71,9 +71,12 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    /*private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        enemySpeed = 0;
+        if (collision.gameObject.CompareTag("goal"))
+        {
+            enemySpeed = 0;
+
+        }
     }
-    */
 }
