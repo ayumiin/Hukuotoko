@@ -8,7 +8,7 @@ public class EnemyController3 : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 5f;
+    private float enemySpeed = 50f;
     //private NavMeshAgent agent;
     private Rigidbody2D rigidbody;
     private Vector2 vector;
@@ -51,15 +51,12 @@ public class EnemyController3 : MonoBehaviour
                 {
                     case 1:
                         transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
                         break;
                     case 2:
                         transform.Rotate(0, 0, -90);
-                        Debug.Log("hit");
                         break;
                     case 3:
                         transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
                         break;
                     case 4:
                         transform.Rotate(0, 0, -90);
@@ -70,9 +67,14 @@ public class EnemyController3 : MonoBehaviour
             }
         }
     }
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        enemySpeed = 0;
-    }
+        if (collision.gameObject.CompareTag("GOAL"))
+        {
+            enemySpeed = 0;
 
+        }
+    }
+    
 }

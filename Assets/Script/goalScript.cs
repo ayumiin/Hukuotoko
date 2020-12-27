@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class goalScript : MonoBehaviour
 {
-    public int count;
+    public int count,rank;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,10 @@ public class goalScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        count++;
         if (collision.gameObject.CompareTag("Player"))
         {
-            count++;
+            rank = count;
         }
-
     }
 }
