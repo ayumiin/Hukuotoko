@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 13f;
-    private float sutamina = 500f;
+    private float sutamina = 20f;
     public Slider StSlider;
     public Text scoretext, ranktext;
 
@@ -48,13 +48,13 @@ public class PlayerController : MonoBehaviour
         {
             stop = true;
         }
-        /*
+        
         //sutamina上限
-        if(sutamina > 10)
+        if(sutamina > 20)
         {
-            sutamina = 10;
+            sutamina = 20;
         }
-        */
+        
     }
     private void FixedUpdate()
     {
@@ -93,10 +93,11 @@ public class PlayerController : MonoBehaviour
                     stop = false;
                 }
             }
-            if (Vector2.Distance(transform.position, hit.transform.position) < 4f)
+            if (Vector2.Distance(transform.position, hit.transform.position) < 2.5f)
             {
                 rigidbody.velocity = Vector3.zero;
                 ranktext.text = GoalScript.rank.ToString() + "位";
+                game.playtimer -= Time.deltaTime;
             }
 
         }
@@ -130,7 +131,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("water"))
         {
             sutamina += 3;
-            Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Energy"))
         {

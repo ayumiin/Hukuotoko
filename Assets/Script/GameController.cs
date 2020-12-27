@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public bool timerStart;
-    private float playtimer;
-    private int second,third;
+    public float playtimer;
+    public int second,third;
     private float totaltimer = 4;
 
     public Text Playtext,Totaltext;

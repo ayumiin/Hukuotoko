@@ -19,9 +19,14 @@ public class goalScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        count++;
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            count++;
+            Debug.Log("hit");
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
+            count++;
             rank = count;
         }
     }
