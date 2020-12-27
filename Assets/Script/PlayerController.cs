@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 13f;
+    private float speed = 12.7f;
     private float sutamina = 20f;
     public Slider StSlider;
     public Text scoretext, ranktext;
@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
     private float timer = 0;
     private float speedtimer, sutaminatimer;
     private float nowsutamina;
+    private int inttime;
     private int score = 0;
     private bool stop,speedup,sutaminaup;
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
         hit = GameObject.Find("goal");
         GoalScript = hit.GetComponent<goalScript>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -93,11 +96,51 @@ public class PlayerController : MonoBehaviour
                     stop = false;
                 }
             }
+            //animation
+            if (Input.GetKey(KeyCode.A))
+            {
+                animator.SetBool("left", true);
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                animator.SetBool("left", false);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                animator.SetBool("back", true);
+                Debug.Log("hit");
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                animator.SetBool("back", false);
+                Debug.Log("up");
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                animator.SetBool("right", true);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                animator.SetBool("right", false);
+            }
+            //goal
             if (Vector2.Distance(transform.position, hit.transform.position) < 2.5f)
             {
                 rigidbody.velocity = Vector3.zero;
                 ranktext.text = GoalScript.rank.ToString() + "位";
                 game.playtimer -= Time.deltaTime;
+                game.resulttime = game.playtimer;
+                inttime = (int)game.resulttime;
+                game.Playtext.text = "タイム:" + inttime.ToString();
+
+                // Type == Number の場合
+                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
+                /*
+                // Type == Time の場合
+                var millsec = 123456;
+                var timeScore = new System.TimeSpan(0, 0, 0, 0, millsec);
+                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(timeScore);
+                */
             }
 
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class goalScript : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class goalScript : MonoBehaviour
         {
             count++;
             rank = count;
+            //Invoke("Result", 2);
         }
+    }
+    private void Result()
+    {
+        SceneManager.LoadScene("Result");
     }
 }

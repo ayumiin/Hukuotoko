@@ -8,7 +8,7 @@ public class EnemyController2 : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 12f;
+    private float enemySpeed = 13.5f;
     //private NavMeshAgent agent;
     private Rigidbody2D rigidbody;
     private Vector2 vector;
