@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 8f;
+    private float speed = 50f;
     private float sutamina = 500f;
     public Slider StSlider;
-    public Text scoretext;
+    public Text scoretext, ranktext;
 
     private Rigidbody2D rigidbody;
     private Vector2 vector;
@@ -93,6 +93,12 @@ public class PlayerController : MonoBehaviour
                     stop = false;
                 }
             }
+            if (Vector2.Distance(transform.position, hit.transform.position) < 4f)
+            {
+                rigidbody.velocity = Vector3.zero;
+                ranktext.text = GoalScript.rank.ToString() + "位";
+            }
+
         }
         //energy取得、スピードアップ
         if (speedup == true)
@@ -118,22 +124,6 @@ public class PlayerController : MonoBehaviour
                 sutaminatimer = 0;
             }
         }
-        switch (GoalScript.count)
-        {
-            case 1:
-                Debug.Log("一位");
-                break;
-            case 2:
-                Debug.Log("二位");
-                break;
-            case 3:
-                Debug.Log("3位");
-                break;
-            case 4:
-                Debug.Log("4位");
-                break;
-
-        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -158,14 +148,6 @@ public class PlayerController : MonoBehaviour
             score++;
             scoretext.text = "score:" + score.ToString();
             Destroy(collision.gameObject);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("goal"))
-        {
-            rigidbody.velocity = Vector3.zero;
         }
     }
 }

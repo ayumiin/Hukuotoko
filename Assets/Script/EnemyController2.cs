@@ -50,18 +50,18 @@ public class EnemyController2 : MonoBehaviour
                 switch (target)
                 {
                     case 1:
-                        transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
+                        transform.Rotate(0, 0, 180);
                         break;
                     case 2:
                         transform.Rotate(0, 0, -90);
-                        Debug.Log("hit");
                         break;
                     case 3:
-                        transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
+                        transform.Rotate(0, 0, -90);
                         break;
                     case 4:
+                        transform.Rotate(0, 0, 90);
+                        break;
+                    case 5:
                         transform.Rotate(0, 0, -90);
                         target = 0;
                         break;
@@ -72,7 +72,7 @@ public class EnemyController2 : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("goal"))
+        if (collision.gameObject.CompareTag("GOAL"))
         {
             enemySpeed = 0;
 

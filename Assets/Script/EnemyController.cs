@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
+    public GameObject goal;
     public int target = 0;
     private float enemySpeed = 50f;
     //private NavMeshAgent agent;
@@ -37,6 +38,10 @@ public class EnemyController : MonoBehaviour
         // エージェントが現目標地点に近づいてきたら次の目標地点を選択
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         */
+        if(Vector2.Distance(transform.position,goal.transform.position) < 2f)
+        {
+            enemySpeed = 0;
+        }
     }
 
     private void FixedUpdate()
@@ -53,15 +58,12 @@ public class EnemyController : MonoBehaviour
                 {
                     case 1:
                         transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
                         break;
                     case 2:
                         transform.Rotate(0, 0, -90);
-                        Debug.Log("hit");
                         break;
                     case 3:
                         transform.Rotate(0, 0, 90);
-                        Debug.Log("hit");
                         break;
                     case 4:
                         transform.Rotate(0, 0, -90);
@@ -69,14 +71,6 @@ public class EnemyController : MonoBehaviour
                         break;
                 }
             }
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("goal"))
-        {
-            enemySpeed = 0;
-
         }
     }
 }
