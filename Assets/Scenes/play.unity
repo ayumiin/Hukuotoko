@@ -1382,7 +1382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Time :0
+  m_Text: "\u30BF\u30A4\u30E0:0"
 --- !u!1 &286970450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: score:0
+  m_Text: "\u30B9\u30B3\u30A2:0"
 --- !u!222 &449673281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7691,6 +7691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825318335438166570, guid: 8062f7a0d373e114296a0c08ab93c60d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8062f7a0d373e114296a0c08ab93c60d, type: 3}
