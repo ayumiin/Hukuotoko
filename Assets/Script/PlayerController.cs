@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 50f;
+    private float speed = 13f;
     private float sutamina = 500f;
     public Slider StSlider;
     public Text scoretext, ranktext;
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (speedup == true)
         {
             speedtimer += Time.deltaTime;
-            speed += 10;
+            speed += 1;
             if(speedtimer > 3)
             {
                 speedup = false;

@@ -44,6 +44,6 @@ public class GameController : MonoBehaviour
         }
         //intに変換
         third = (int)playtimer;
-        Playtext.text = "Time:" + third.ToString();
+        Playtext.text = "タイム:" + third.ToString();
     }
 }
