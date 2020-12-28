@@ -57,10 +57,10 @@ public class EnemyController1 : MonoBehaviour
                         break;
                     case 2:
                         animator.SetBool("left", true);
-                        animator.SetBool("right", false);
                         break;
                     case 3:
                         animator.SetBool("left", false);
+                        animator.SetBool("right", false);
                         break;
                     case 4:
                         animator.SetBool("left", true);

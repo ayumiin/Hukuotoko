@@ -52,14 +52,14 @@ public class EnemyController2 : MonoBehaviour
                 switch (target)
                 {
                     case 1:
-                        //animator.SetBool("back", true);
+                        animator.SetBool("back", true);
                         break;
                     case 2:
                         animator.SetBool("left", true);
-                        //animator.SetBool("back", false);
                         break;
                     case 3:
                         animator.SetBool("left", false);
+                        animator.SetBool("back", false);
                         break;
                     case 4:
                         animator.SetBool("left", true);
@@ -75,6 +75,10 @@ public class EnemyController2 : MonoBehaviour
                     enemySpeed = 0;
                 }
             }
+        }
+        else
+        {
+            animator.SetTrigger("start");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
