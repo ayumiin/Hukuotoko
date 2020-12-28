@@ -71,8 +71,11 @@
     <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <None Include="Assets\Plugins\Android\res\values\version 13.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 10.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 14.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 12.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 5.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 2.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest 2.xml" />
@@ -85,6 +88,7 @@
     <None Include="Assets\Plugins\Android\res\values\version 9.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 3.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 6.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 11.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/kobayashidaisuke/Desktop/１week/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

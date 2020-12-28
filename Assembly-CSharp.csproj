@@ -125,6 +125,7 @@
     <Compile Include="Assets\Scenes\Member\Loginsignin.cs" />
     <Compile Include="Assets\Scenes\Member\Logout.cs" />
     <Compile Include="Assets\Scenes\QuickStartScene\QuickStart.cs" />
+    <Compile Include="Assets\Script\AudioController 2.cs" />
     <Compile Include="Assets\Script\AudioController.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\EnemyController1.cs" />
