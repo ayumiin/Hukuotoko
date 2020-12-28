@@ -39,19 +39,19 @@ public class goalScript : MonoBehaviour
             switch (rank)
             {
                 case 1:
-                    script.score += 500;
+                    script.score += 2640;
                     break;
                 case 2:
-                    script.score += 400;
+                    script.score += 2180;
                     break;
                 case 3:
-                    script.score += 300;
+                    script.score += 1960;
                     break;
                 case 4:
-                    script.score += 200;
+                    script.score += 1640;
                     break;
                 case 5:
-                    script.score += 100;
+                    script.score += 1280;
                     break;
             }
             ScoreSend();

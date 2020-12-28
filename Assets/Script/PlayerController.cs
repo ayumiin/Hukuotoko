@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 30f;
+    private float speed = 12f;
     private float sutamina = 200f;
     public Slider StSlider;
     public Text scoretext, ranktext;
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public int score { get; set; }
     private bool stop,speedup,sutaminaup,goal;
     private Animator animator;
+
+    public GameObject sutaminaText;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             sutamina = 20;
         }
-        scoretext.text = "score:" + score.ToString();
+        scoretext.text = "スコア:" + score.ToString();
     }
     private void FixedUpdate()
     {
@@ -89,6 +91,8 @@ public class PlayerController : MonoBehaviour
                 {
                     sutamina -= Time.deltaTime * 2;
                 }
+
+                sutaminaText.SetActive(false);
             }
             else
             {
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
                 {
                     stop = false;
                 }
+                sutaminaText.SetActive(true);
             }
             //animation
             if (Input.GetKey(KeyCode.A))
@@ -190,7 +195,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("score"))
         {
-            score += 500;
+            score += 1520;
             Destroy(collision.gameObject);
         }
     }

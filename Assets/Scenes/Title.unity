@@ -757,9 +757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcc0fff1f2bff64fb1d49157f48387d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 394083000}
-  touch: {fileID: 168857120}
-  tuterial: {fileID: 748104387}
 --- !u!1 &412597787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2039,7 @@ PrefabInstance:
     - target: {fileID: 3764279316581256718, guid: 21d909a243df08441ae238f7f99a051d,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3764279317966313307, guid: 21d909a243df08441ae238f7f99a051d,
         type: 3}
@@ -2052,7 +2049,7 @@ PrefabInstance:
     - target: {fileID: 3764279317870445521, guid: 21d909a243df08441ae238f7f99a051d,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3764279315909521105, guid: 21d909a243df08441ae238f7f99a051d,
         type: 3}
@@ -2088,6 +2085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764279317090749224, guid: 21d909a243df08441ae238f7f99a051d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d909a243df08441ae238f7f99a051d, type: 3}
