@@ -73,6 +73,7 @@
     <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 2.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest 3.xml" />
     <None Include="Assets\Plugins\Android\res\values\version.xml" />
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
