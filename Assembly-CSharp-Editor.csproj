@@ -64,11 +64,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\NCMBMenu 2.cs" />
     <Compile Include="Assets\Editor\NCMBMenu.cs" />
+    <Compile Include="Assets\Editor\PreBuildAndroid 2.cs" />
     <Compile Include="Assets\Editor\PreBuildAndroid.cs" />
+    <Compile Include="Assets\Editor\SimpleJSON 2.cs" />
     <Compile Include="Assets\Editor\SimpleJSON.cs" />
+    <Compile Include="Assets\Editor\SimpleJSONBinary 2.cs" />
     <Compile Include="Assets\Editor\SimpleJSONBinary.cs" />
+    <Compile Include="Assets\Editor\SimpleJSONUnity 2.cs" />
     <Compile Include="Assets\Editor\SimpleJSONUnity.cs" />
+    <Compile Include="Assets\Editor\UpdateXcodeProject 2.cs" />
     <Compile Include="Assets\Editor\UpdateXcodeProject.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/kobayashidaisuke/Desktop/１week/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
