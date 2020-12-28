@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
     public AudioClip play, count;
 
     private float timer;
+    private bool bgm = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,15 @@ public class AudioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer > 4)
+        if(bgm == false)
         {
-            audioSource.clip = play;
-            audioSource.Play();
+            timer += Time.deltaTime;
+            if (timer > 4)
+            {
+                audioSource.clip = play;
+                audioSource.Play();
+                bgm = true;
+            }
         }
     }
 }

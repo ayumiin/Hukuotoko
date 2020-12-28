@@ -11,6 +11,7 @@ public class EnemyController1 : MonoBehaviour
     private float enemySpeed = 10f;
     //private NavMeshAgent agent;
     private Rigidbody2D rigidbody;
+    private Animator animator;
     private Vector2 vector;
     private GameController game;
     private GameObject script;
@@ -22,66 +23,74 @@ public class EnemyController1 : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         script = GameObject.Find("GameController");
         game = script.GetComponent<GameController>();
+        animator = GetComponent<Animator>();
 
         FixedUpdate();
 
         //transform.position = points[target].transform.position;
         //transform.LookAt(points[target].transform.position);
     }
-
+    /*
     // Update is called once per frame
     void Update()
     {
         /*
         // エージェントが現目標地点に近づいてきたら次の目標地点を選択
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        */
+        
     }
-
+    */
     private void FixedUpdate()
     {
 
         if(game.timerStart == true)
         {
-            transform.Translate(0, enemySpeed * Time.deltaTime, 0);
+            transform.position = Vector2.MoveTowards(transform.position, points[target].transform.position, enemySpeed * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, points[target].transform.position) < 2f)
+            if (Vector2.Distance(transform.position, points[target].transform.position) < 1.5f)
             {
                 target++;
                 switch (target)
                 {
                     case 1:
-                        transform.Rotate(0, 0, -90);
+                        animator.SetBool("right", true);
                         break;
                     case 2:
-                        transform.Rotate(0, 0, 180);
+                        animator.SetBool("left", true);
+                        animator.SetBool("right", false);
                         break;
                     case 3:
-                        transform.Rotate(0, 0, -90);
+                        animator.SetBool("left", false);
                         break;
                     case 4:
-                        transform.Rotate(0, 0, 90);
+                        animator.SetBool("left", true);
                         break;
                     case 5:
-                        transform.Rotate(0, 0, -90);
+                        animator.SetBool("left", false);
                         break;
                     case 6:
-                        transform.Rotate(0, 0, 90);
+                        animator.SetBool("left", true);
                         break;
                     case 7:
-                        transform.Rotate(0, 0, -90);
-                        target = 0;
+                        animator.SetBool("left", false);
                         break;
+
+                }
+                if (target == 8)
+                {
+                    Debug.Log("hit");
+                    enemySpeed = 0;
                 }
             }
         }
     }
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("GOAL"))
         {
             enemySpeed = 0;
-
         }
     }
+    */
 }
