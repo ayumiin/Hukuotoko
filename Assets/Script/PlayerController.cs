@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     private float speedtimer, sutaminatimer;
     private float nowsutamina;
     private int inttime;
-    private int score = 0;
-    private bool stop,speedup,sutaminaup;
+    public int score = 0;
+    private bool stop,speedup,sutaminaup,goal;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         {
             sutamina = 20;
         }
-        
+        scoretext.text = "score:" + score.ToString();
     }
     private void FixedUpdate()
     {
@@ -108,12 +108,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.S))
             {
                 animator.SetBool("back", true);
-                Debug.Log("hit");
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
                 animator.SetBool("back", false);
-                Debug.Log("up");
             }
             if (Input.GetKey(KeyCode.D))
             {
@@ -123,26 +121,47 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("right", false);
             }
+            
             //goal
             if (Vector2.Distance(transform.position, hit.transform.position) < 2.5f)
             {
                 rigidbody.velocity = Vector3.zero;
+                
                 ranktext.text = GoalScript.rank.ToString() + "位";
                 game.playtimer -= Time.deltaTime;
                 game.resulttime = game.playtimer;
                 inttime = (int)game.resulttime;
                 game.Playtext.text = "タイム:" + inttime.ToString();
-
-                // Type == Number の場合
-                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
                 /*
+                switch (GoalScript.rank)
+                {
+                    case 1:
+                        score += 500;
+                        break;
+                    case 2:
+                        score += 400;
+                        break;
+                    case 3:
+                        score += 300;
+                        break;
+                    case 4:
+                        score += 200;
+                        break;
+                    case 5:
+                        score += 100;
+                        break;
+                }
+                
+                // Type == Number の場合
+                //naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
+                
                 // Type == Time の場合
                 var millsec = 123456;
                 var timeScore = new System.TimeSpan(0, 0, 0, 0, millsec);
                 naichilab.RankingLoader.Instance.SendScoreAndShowRanking(timeScore);
                 */
             }
-
+                
         }
         //energy取得、スピードアップ
         if (speedup == true)
@@ -188,9 +207,40 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("score"))
         {
-            score++;
-            scoretext.text = "score:" + score.ToString();
+            score += 500;
             Destroy(collision.gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("GOAL"))
+        {
+            /*
+            ranktext.text = GoalScript.rank.ToString() + "位";
+            game.playtimer -= Time.deltaTime;
+            game.resulttime = game.playtimer;
+            inttime = (int)game.resulttime;
+            game.Playtext.text = "タイム:" + inttime.ToString();
+            
+            switch (GoalScript.rank)
+            {
+                case 1:
+                    score += 500;
+                    break;
+                case 2:
+                    score += 400;
+                    break;
+                case 3:
+                    score += 300;
+                    break;
+                case 4:
+                    score += 200;
+                    break;
+                case 5:
+                    score += 100;
+                    break;
+            }
+            */
         }
     }
 }
