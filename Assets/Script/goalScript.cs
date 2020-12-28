@@ -28,13 +28,13 @@ public class goalScript : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             count++;
-            Debug.Log("hit");
+            Debug.Log("hitenemy");
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             count++;
             rank = count;
-            Debug.Log("hit");
+            Debug.Log("hitplayer");
 
             switch (rank)
             {

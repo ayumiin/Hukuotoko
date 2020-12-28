@@ -1465,6 +1465,7 @@ MonoBehaviour:
   - {fileID: 354148582}
   - {fileID: 280659587}
   target: 0
+  enemySpeed: 13.5
 --- !u!61 &243658673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1587,7 +1588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243658671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.61, y: 1.9, z: 0}
+  m_LocalPosition: {x: -1.9, y: 2, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2260,7 +2261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357833508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.2, y: -221.9, z: 914.3047}
+  m_LocalPosition: {x: 95.15, y: -222.59, z: 914.3047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404377757}
@@ -2860,7 +2861,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538112612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11, y: 44.6, z: 914.3047}
+  m_LocalPosition: {x: -11.23, y: 47.42, z: 914.3047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1951061724}
@@ -3131,7 +3132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581422008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.94, y: 2, z: 0}
+  m_LocalPosition: {x: 3.33, y: 2, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3158,6 +3159,7 @@ MonoBehaviour:
   - {fileID: 1894591548}
   goal: {fileID: 1912439971}
   target: 0
+  enemySpeed: 13
 --- !u!61 &581422012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4301,6 +4303,36 @@ Transform:
   m_Father: {fileID: 1041817123}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &740593951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740593952}
+  m_Layer: 0
+  m_Name: CarPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740593952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740593951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.22, y: 171.67, z: -9.4609375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763418885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,7 +4485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781651093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 92.61, y: -196.84, z: 914.3047}
+  m_LocalPosition: {x: 95.02, y: -196.84, z: 914.3047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2124148696}
@@ -5682,9 +5714,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 25
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 25
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6589,6 +6621,7 @@ MonoBehaviour:
   - {fileID: 941573000}
   - {fileID: 728934380}
   target: 0
+  enemySpeed: 12.1
 --- !u!212 &1394090880
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7073,6 +7106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051fe9467097446da9c1546a080b27b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 12
   StSlider: {fileID: 1061417003}
   scoretext: {fileID: 449673280}
   ranktext: {fileID: 1349768812}
@@ -8995,6 +9029,7 @@ MonoBehaviour:
   - {fileID: 538112612}
   - {fileID: 585942704}
   target: 0
+  enemySpeed: 12.3
 --- !u!212 &1841066610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9544,7 +9579,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0539627, y: 3.501648}
+  m_Offset: {x: 1.0539627, y: 2.612381}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9555,7 +9590,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.974197, y: 12.889099}
+  m_Size: {x: 14.974197, y: 14.667633}
   m_EdgeRadius: 0
 --- !u!4 &1912439973
 Transform:
@@ -9841,6 +9876,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1938835437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938835440}
+  - component: {fileID: 1938835439}
+  - component: {fileID: 1938835438}
+  m_Layer: 0
+  m_Name: Playerpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1938835438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938835437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebe7ccfba83540bf855613c2e7a7f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMove: 0
+--- !u!61 &1938835439
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938835437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.83328915, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.741026, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1938835440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938835437}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.9, y: 159.24, z: -349.52838}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949478048
 GameObject:
   m_ObjectHideFlags: 0
@@ -9852,6 +9958,7 @@ GameObject:
   - component: {fileID: 1949478051}
   - component: {fileID: 1949478050}
   - component: {fileID: 1949478049}
+  - component: {fileID: 1949478052}
   m_Layer: 0
   m_Name: car
   m_TagString: Untagged
@@ -9947,6 +10054,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1949478052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949478048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9159d84ca2d534c639e8cdae0c3ef616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpoints: {fileID: 740593951}
+  car: {fileID: 1938835437}
+  speed: 30
 --- !u!1 &1951061723
 GameObject:
   m_ObjectHideFlags: 0

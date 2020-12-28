@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.S))
             {
                 animator.SetBool("back", true);
+                Debug.Log("back");
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
@@ -132,7 +133,7 @@ public class PlayerController : MonoBehaviour
             }
             
             //goal
-            if (Vector2.Distance(transform.position, hit.transform.position) < 2.5f)
+            if (Vector2.Distance(transform.position, hit.transform.position) < 3f)
             {
                 rigidbody.velocity = Vector3.zero;
                 
