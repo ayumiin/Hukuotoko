@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public GameObject[] points;
     public GameObject goal;
     public int target = 0;
-    private float enemySpeed = 13f;
+    public float enemySpeed = 13f;
     private Animator animator;
     private Rigidbody2D rigidbody;
     private Vector2 vector;

@@ -83,6 +83,7 @@
     <None Include="Assets\Plugins\Android\AndroidManifest 2.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 7.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest 3.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 17.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 8.xml" />
     <None Include="Assets\Plugins\Android\res\values\version.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 4.xml" />

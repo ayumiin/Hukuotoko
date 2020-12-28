@@ -8,7 +8,7 @@ public class EnemyController3 : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 12.3f;
+    public float enemySpeed = 12.3f;
     private Animator animator;
     private Rigidbody2D rigidbody;
     private Vector2 vector;

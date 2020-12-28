@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 12f;
-    private float sutamina = 25f;
+    public float speed = 12f;
+    private float sutamina = 20f;
     public Slider StSlider;
     public Text scoretext, ranktext;
 
@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
         }
         
         //sutamina上限
-        if(sutamina > 25)
+        if(sutamina > 20)
         {
-            sutamina = 25;
+            sutamina = 20;
         }
         scoretext.text = "スコア:" + score.ToString();
     }
@@ -155,8 +155,8 @@ public class PlayerController : MonoBehaviour
         if (speedup == true)
         {
             speedtimer += Time.deltaTime;
-            speed = 18;
-            if(speedtimer > 2)
+            speed = 20;
+            if(speedtimer > 2.5f)
             {
                 speed = 12;
                 speedtimer = 0;
@@ -206,7 +206,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("water"))
         {
             sutamina += 5;
-            Debug.Log("sutamina");
         }
     }
 
