@@ -44,6 +44,7 @@ public class EnemyController : MonoBehaviour
             //transform.Translate(0, enemySpeed * Time.deltaTime, 0);
 
             transform.position = Vector2.MoveTowards(transform.position, points[target].transform.position, enemySpeed * Time.deltaTime);
+            animator.SetBool("start", true);
 
             if (Vector2.Distance(transform.position, points[target].transform.position) < 1.5f)
             {
@@ -70,5 +71,10 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            animator.SetBool("start", false);
+        }
+
     }
 }

@@ -76,7 +76,9 @@
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 14.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 12.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 18.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 5.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 15.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 2.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest 2.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 7.xml" />
@@ -87,6 +89,7 @@
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Plugins\Android\res\values\version 9.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 3.xml" />
+    <None Include="Assets\Plugins\Android\res\values\version 16.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 6.xml" />
     <None Include="Assets\Plugins\Android\res\values\version 11.xml" />
     <Reference Include="Unity.Timeline.Editor">

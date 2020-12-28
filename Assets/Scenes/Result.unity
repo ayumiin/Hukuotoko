@@ -493,7 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " 2021\u3044\u3044\u5E74\u306B\u306A\u308A\u307E\u3059\u3088\u3046\u306B\uFF01"
+  m_Text: " 2021 \u3044\u3044\u5E74\u306B\u306A\u308A\u307E\u3059\u3088\u3046\u306B\uFF01"
 --- !u!222 &650591618
 CanvasRenderer:
   m_ObjectHideFlags: 0

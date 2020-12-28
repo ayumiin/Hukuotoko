@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 12f;
-    private float sutamina = 200f;
+    private float sutamina = 25f;
     public Slider StSlider;
     public Text scoretext, ranktext;
 
@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
         }
         
         //sutamina上限
-        if(sutamina > 20)
+        if(sutamina > 25)
         {
-            sutamina = 20;
+            sutamina = 25;
         }
         scoretext.text = "スコア:" + score.ToString();
     }
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
         //カウントダウン中は動かない処理
         if(game.timerStart == true)
         {
-            sutamina += Time.deltaTime;
+            sutamina += Time.deltaTime * 2;
+            animator.SetBool("start", true);
             //スタミナ減少
             if (stop == false)
             {
@@ -77,19 +78,19 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.W))
                 {
-                    sutamina -= Time.deltaTime * 2;
+                    sutamina -= Time.deltaTime * 3;
                 }
                 else if (Input.GetKey(KeyCode.A))
                 {
-                    sutamina -= Time.deltaTime * 2;
+                    sutamina -= Time.deltaTime * 3;
                 }
                 else if (Input.GetKey(KeyCode.S))
                 {
-                    sutamina -= Time.deltaTime * 2;
+                    sutamina -= Time.deltaTime * 3;
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
-                    sutamina -= Time.deltaTime * 2;
+                    sutamina -= Time.deltaTime * 3;
                 }
 
                 sutaminaText.SetActive(false);
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
             {
                 //スタミナ0以下で動かなくなる
                 rigidbody.velocity = Vector3.zero;
-                if (sutamina >= 10)
+                if (sutamina >= 3)
                 {
                     stop = false;
                 }
@@ -143,18 +144,23 @@ public class PlayerController : MonoBehaviour
 
                 Invoke("ResultMove", 2f);     
             }
-                
+
         }
+        else
+        {
+            animator.SetBool("start", false);
+        }
+
         //energy取得、スピードアップ
         if (speedup == true)
         {
             speedtimer += Time.deltaTime;
-            speed += 1;
-            if(speedtimer > 3)
+            speed = 18;
+            if(speedtimer > 2)
             {
-                speedup = false;
-                speed = 10;
+                speed = 12;
                 speedtimer = 0;
+                speedup = false;
             }
         }
         //スタミナは減らない
@@ -178,10 +184,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("water"))
-        {
-            sutamina += 3;
-        }
         if (collision.gameObject.CompareTag("Energy"))
         {
             speedup = true;
@@ -199,11 +201,13 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    /*
-    void ScoreSend()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerPrefs.SetInt(PlayerPrefsKeys.Score, score);
-        PlayerPrefs.Save();
+        if (collision.gameObject.CompareTag("water"))
+        {
+            sutamina += 5;
+            Debug.Log("sutamina");
+        }
     }
-    */
+
 }
