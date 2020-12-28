@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 12.7f;
-    private float sutamina = 20f;
+    private float speed = 30f;
+    private float sutamina = 200f;
     public Slider StSlider;
     public Text scoretext, ranktext;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float speedtimer, sutaminatimer;
     private float nowsutamina;
     private int inttime;
-    public int score = 0;
+    public int score { get; set; }
     private bool stop,speedup,sutaminaup,goal;
     private Animator animator;
 
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
         GoalScript = hit.GetComponent<goalScript>();
 
         animator = GetComponent<Animator>();
+
+        //ScoreSend();
     }
 
     // Update is called once per frame
@@ -132,34 +135,8 @@ public class PlayerController : MonoBehaviour
                 game.resulttime = game.playtimer;
                 inttime = (int)game.resulttime;
                 game.Playtext.text = "タイム:" + inttime.ToString();
-                /*
-                switch (GoalScript.rank)
-                {
-                    case 1:
-                        score += 500;
-                        break;
-                    case 2:
-                        score += 400;
-                        break;
-                    case 3:
-                        score += 300;
-                        break;
-                    case 4:
-                        score += 200;
-                        break;
-                    case 5:
-                        score += 100;
-                        break;
-                }
-                
-                // Type == Number の場合
-                //naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
-                
-                // Type == Time の場合
-                var millsec = 123456;
-                var timeScore = new System.TimeSpan(0, 0, 0, 0, millsec);
-                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(timeScore);
-                */
+
+                Invoke("ResultMove", 2f);     
             }
                 
         }
@@ -188,6 +165,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void ResultMove()
+    {
+        SceneManager.LoadScene(PlayerPrefsKeys.Result);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("water"))
@@ -211,36 +194,11 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*
+    void ScoreSend()
     {
-        if (collision.gameObject.CompareTag("GOAL"))
-        {
-            /*
-            ranktext.text = GoalScript.rank.ToString() + "位";
-            game.playtimer -= Time.deltaTime;
-            game.resulttime = game.playtimer;
-            inttime = (int)game.resulttime;
-            game.Playtext.text = "タイム:" + inttime.ToString();
-            
-            switch (GoalScript.rank)
-            {
-                case 1:
-                    score += 500;
-                    break;
-                case 2:
-                    score += 400;
-                    break;
-                case 3:
-                    score += 300;
-                    break;
-                case 4:
-                    score += 200;
-                    break;
-                case 5:
-                    score += 100;
-                    break;
-            }
-            */
-        }
+        PlayerPrefs.SetInt(PlayerPrefsKeys.Score, score);
+        PlayerPrefs.Save();
     }
+    */
 }

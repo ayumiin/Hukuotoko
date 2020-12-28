@@ -14,6 +14,8 @@ public class goalScript : MonoBehaviour
     {
         player = GameObject.Find("player");
         script = player.GetComponent<PlayerController>();
+
+        //ScoreSend();
     }
 
     // Update is called once per frame
@@ -34,7 +36,6 @@ public class goalScript : MonoBehaviour
             rank = count;
             Debug.Log("hit");
 
-            //Invoke("Result", 2);
             switch (rank)
             {
                 case 1:
@@ -53,10 +54,14 @@ public class goalScript : MonoBehaviour
                     script.score += 100;
                     break;
             }
+            ScoreSend();
         }
     }
-    private void Result()
+    
+    void ScoreSend()
     {
-        SceneManager.LoadScene("Result");
+        PlayerPrefs.SetInt(PlayerPrefsKeys.Score, script.score);
+        PlayerPrefs.Save();
     }
+    
 }
