@@ -46,6 +46,8 @@ public class EnemyController2 : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, points[target].transform.position, enemySpeed * Time.deltaTime);
 
+            animator.SetBool("start", true);
+
             if (Vector2.Distance(transform.position, points[target].transform.position) < 1.5f)
             {
                 target++;
@@ -78,7 +80,7 @@ public class EnemyController2 : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("start");
+            animator.SetBool("start", false);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

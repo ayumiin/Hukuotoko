@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
         //カウントダウン中は動かない処理
         if(game.timerStart == true)
         {
+            animator.SetBool("start", true);
+
             sutamina += Time.deltaTime;
             //スタミナ減少
             if (stop == false)
@@ -96,6 +98,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                animator.SetBool("start", false);
                 //スタミナ0以下で動かなくなる
                 rigidbody.velocity = Vector3.zero;
                 if (sutamina >= 10)
@@ -130,6 +133,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("right", false);
             }
             
+
             //goal
             if (Vector2.Distance(transform.position, hit.transform.position) < 2.5f)
             {
@@ -143,8 +147,14 @@ public class PlayerController : MonoBehaviour
 
                 Invoke("ResultMove", 2f);     
             }
+
                 
         }
+        else
+        {
+            animator.SetBool("start", false);
+        }
+
         //energy取得、スピードアップ
         if (speedup == true)
         {

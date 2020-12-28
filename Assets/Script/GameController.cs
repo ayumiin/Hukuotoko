@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public bool timerStart;
+    public bool timerStart = false;
     public float playtimer,resulttime;
     public int second,third;
     private float totaltimer = 4;
