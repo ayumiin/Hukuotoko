@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class goalScript : MonoBehaviour
 {
@@ -19,10 +20,20 @@ public class goalScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        count++;
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            count++;
+            Debug.Log("hit");
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
+            count++;
             rank = count;
+            //Invoke("Result", 2);
         }
+    }
+    private void Result()
+    {
+        SceneManager.LoadScene("Result");
     }
 }
