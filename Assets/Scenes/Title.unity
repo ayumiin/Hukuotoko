@@ -1815,6 +1815,9 @@ MonoBehaviour:
   nextButton03: {fileID: 340259133}
   backButton01: {fileID: 1740660425}
   backButton02: {fileID: 1730321111}
+  titleText: {fileID: 394083000}
+  touch: {fileID: 168857120}
+  tuterial: {fileID: 748104387}
 --- !u!4 &1868109178
 Transform:
   m_ObjectHideFlags: 0

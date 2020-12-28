@@ -34,7 +34,6 @@ public class goalScript : MonoBehaviour
             rank = count;
             Debug.Log("hit");
 
-            //Invoke("Result", 2);
             switch (rank)
             {
                 case 1:
@@ -54,9 +53,5 @@ public class goalScript : MonoBehaviour
                     break;
             }
         }
-    }
-    private void Result()
-    {
-        SceneManager.LoadScene("Result");
     }
 }
