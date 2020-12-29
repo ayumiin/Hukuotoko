@@ -39,7 +39,7 @@ public class goalScript : MonoBehaviour
             switch (rank)
             {
                 case 1:
-                    script.score += 2640;
+                    script.score += 2880;
                     break;
                 case 2:
                     script.score += 2180;
