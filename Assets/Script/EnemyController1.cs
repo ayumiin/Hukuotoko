@@ -8,7 +8,7 @@ public class EnemyController1 : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 10f;
+    public float enemySpeed = 13.5f;
     //private NavMeshAgent agent;
     private Rigidbody2D rigidbody;
     private Animator animator;
@@ -47,6 +47,8 @@ public class EnemyController1 : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, points[target].transform.position, enemySpeed * Time.deltaTime);
 
+            animator.SetBool("start", true);
+
             if (Vector2.Distance(transform.position, points[target].transform.position) < 1.5f)
             {
                 target++;
@@ -57,10 +59,10 @@ public class EnemyController1 : MonoBehaviour
                         break;
                     case 2:
                         animator.SetBool("left", true);
-                        animator.SetBool("right", false);
                         break;
                     case 3:
                         animator.SetBool("left", false);
+                        animator.SetBool("right", false);
                         break;
                     case 4:
                         animator.SetBool("left", true);
@@ -82,6 +84,10 @@ public class EnemyController1 : MonoBehaviour
                     enemySpeed = 0;
                 }
             }
+        }
+        else
+        {
+            animator.SetBool("start", false);
         }
     }
     /*

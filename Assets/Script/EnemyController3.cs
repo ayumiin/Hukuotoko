@@ -8,7 +8,7 @@ public class EnemyController3 : MonoBehaviour
     //GameObject[] points = new GameObject[];
     public GameObject[] points;
     public int target = 0;
-    private float enemySpeed = 11f;
+    public float enemySpeed = 12.3f;
     private Animator animator;
     private Rigidbody2D rigidbody;
     private Vector2 vector;
@@ -44,6 +44,7 @@ public class EnemyController3 : MonoBehaviour
         if (game.timerStart == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, points[target].transform.position, enemySpeed * Time.deltaTime);
+            animator.SetBool("start", true);
 
             if (Vector2.Distance(transform.position, points[target].transform.position) < 1.5f)
             {
@@ -72,6 +73,11 @@ public class EnemyController3 : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            animator.SetBool("start", false);
+        }
+
     }
     /*
     private void OnTriggerStay2D(Collider2D collision)
